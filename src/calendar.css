@@ -1,0 +1,75 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+. {
+    font-family: Roboto;
+}
+
+.date {
+  width: 75px;
+  height: 75px;
+  padding: 10px;
+  line-height: 75px;
+  text-align: center;
+  vertical-align: center;
+  flex-grow: 1;
+}
+
+.day {
+  width: 75px;
+  height: 25px;
+  background-color: #00BFFF;
+  padding: 10px;
+  text-align: center;
+  vertical-align: center;
+  line-height: 25px;
+  color: white;
+  flex-grow: 1;
+
+}
+
+#next-button {
+  background: url(next.png) no-repeat;
+  background-size: 100%;
+  border: 0;
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+  margin-top: 22.5px;
+}
+
+#back-button {
+  background: url(back.png) no-repeat;
+  background-size: 100%;
+  border: 0;
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  margin-top: 22.5px;
+}
+
+.month-title {
+  flex-grow: 1;
+  text-align: center;
+  margin-top: 22.5px;
+  color: white;
+  font-size: 32px;
+}
+
+.topbar {
+  width:675px;
+  height: 75px;
+  background-color: #00BFFF;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid {
+  width: 675px;
+  display: grid;
+  grid-gap: 1px 1px;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+}
