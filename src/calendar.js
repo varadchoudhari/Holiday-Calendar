@@ -14,6 +14,7 @@ export class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      states: [{id: 1, state: "Andhra Pradesh", code: "ANP"}, {id:2, state:"Arunachal Pradesh"}, {id: 3, state:"Assam"}, {id:4, state:"Bihar"}, {id: 5, state:"Chhattisgrah"}, {id: 6, state:"Delhi"}, {id: 7, state:"Goa"}, {id: 8, state: "Gujarat"}, {id: 9, state:"Harayana"}, {id:10, state:"Himachal Pradesh"}, {id:11, state:"Jammu and Kashmir"}, {id: 12, state:"Jharkhand"}, {id: 13, state:"Karnataka"}, {id: 14, state:"Kerala"}, {id: 15, state:"Madhya Pradesh"}, {id: 16, state:"Maharashtra"}, {id: 17, state: "Manipur"}, {id: 18, state:"Meghalaya"}, {id: 19, state:"Mizoram"}, {id:20, state:"Nagaland"}, {id: 21, state:"Odisha"}, {id:22, state:"Puducherry"}, {id:23, state:"Punjab"}, {id:24, state:"Rajasthan"}, {id: 25, state:"Sikkim"}, {id:26, state:"Tamil Nadu"}, {id:27, state:"Telangana"}, {id:28, state:"Tripura"}, {id:29, state:"Uttar Pradesh"}, {id: 30, state:"Uttarakhand"}, {id:31, state:"West Bengal"}],
       dates: Array(34).fill(""),
       currentMonth: new Date().getMonth(),
       currentYear: new Date().getYear() + 1900,
@@ -131,6 +132,20 @@ export class Board extends React.Component {
     </div>)
   }
 
+  renderDropDown() {
+    return(
+      <select>
+        {this.state.states.map((data) => {
+          return(<option key={data.id} value={data.state} onChange={this.selectState(data.state)}>{data.state}</option>)
+        })}
+      </select>
+    );
+  }
+
+  selectState(e) {
+    //console.log(e);
+  }
+
   render() {
     return(
       <div>
@@ -179,6 +194,7 @@ export class Board extends React.Component {
           {this.renderDate(33)}
           {this.renderDate(34)}
         </div>
+        <div>{this.renderDropDown()}</div>
       </div>
     );
   }
