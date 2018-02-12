@@ -3,6 +3,10 @@
     font-family: Roboto;
 }
 
+.parent {
+  
+}
+
 .date {
   width: 75px;
   height: 75px;
@@ -67,6 +71,28 @@
   display: grid;
   grid-gap: 1px 1px;
   grid-template-columns: repeat(7, 1fr);
+}
+
+.drop {
+  background-color: #00BFFF;
+  width: 675px;
+  display: grid;
+  height: 75px;
+}
+
+.drop select {
+  background: white;
+  border: 2px solid white;
+  text-align-last: center;
+  font-size: 15px;
+}
+
+.select {
+  width: 250px;
+  height: 30px;
+  margin-left: 212.5px;
+  margin-top: 22.5px;
+
 }
 
 #board {

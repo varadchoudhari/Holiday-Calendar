@@ -13,12 +13,14 @@ class Day extends React.Component {
 export class Board extends React.Component {
   constructor(props) {
     super(props);
+    this.selectState = this.selectState.bind(this)
     this.state = {
-      states: [{id: 1, state: "Andhra Pradesh", code: "ANP"}, {id: 2, state: "Arunachal Pradesh", code: "ARP"}, {id: 3, state:"Assam"}, {id:4, state:"Bihar"}, {id: 5, state:"Chhattisgrah"}, {id: 6, state:"Delhi"}, {id: 7, state:"Goa"}, {id: 8, state: "Gujarat"}, {id: 9, state:"Harayana"}, {id:10, state:"Himachal Pradesh"}, {id:11, state:"Jammu and Kashmir"}, {id: 12, state:"Jharkhand"}, {id: 13, state:"Karnataka"}, {id: 14, state:"Kerala"}, {id: 15, state:"Madhya Pradesh"}, {id: 16, state:"Maharashtra"}, {id: 17, state: "Manipur"}, {id: 18, state:"Meghalaya"}, {id: 19, state:"Mizoram"}, {id:20, state:"Nagaland"}, {id: 21, state:"Odisha"}, {id:22, state:"Puducherry"}, {id:23, state:"Punjab"}, {id:24, state:"Rajasthan"}, {id: 25, state:"Sikkim"}, {id:26, state:"Tamil Nadu"}, {id:27, state:"Telangana"}, {id:28, state:"Tripura"}, {id:29, state:"Uttar Pradesh"}, {id: 30, state:"Uttarakhand"}, {id:31, state:"West Bengal"}],
+      states: [{id: 1, state: "Andhra Pradesh", code: "ANP"}, {id: 2, state: "Arunachal Pradesh", code: "ARP"}, {id: 3, state: "Assam", code: "ASS"}, {id: 4, state: "Bihar", code: "BHR"}, {id: 5, state: "Chhattisgrah", code: "CHS"}, {id: 6, state: "Delhi", code: "DEL"}, {id: 7, state: "Goa", code: "GOA"}, {id: 8, state: "Gujarat", code: "GUJ"}, {id: 9, state: "Harayana", code: "HAR"}, {id: 10, state: "Himachal Pradesh", code: "HIP"}, {id:11, state:"Jammu and Kashmir", code: "JNK"}, {id: 12, state: "Jharkhand", code: "JHK"}, {id: 13, state: "Karnataka", code: "KAR"}, {id: 14, state: "Kerala", code: "KER"}, {id: 15, state: "Madhya Pradesh", code: "MAP"}, {id: 16, state: "Maharashtra", code: "MAH"}, {id: 17, state: "Manipur", code: "MAN"}, {id: 18, state: "Meghalaya", code: "MEG"}, {id: 19, state: "Mizoram", code: "MIZ"}, {id: 20, state: "Nagaland", code: "NAG"}, {id: 21, state: "Odisha", code: "ODI"}, {id: 22, state:"Puducherry", code: "PUD"}, {id: 23, state: "Punjab", code: "PUN"}, {id: 24, state: "Rajasthan", code: "RAJ"}, {id: 25, state: "Sikkim", code: "SIK"}, {id:26, state: "Tamil Nadu", code: "TNU"}, {id: 27, state: "Telangana", code: "TEL"}, {id: 28, state: "Tripura", code: "TRI"}, {id: 29, state: "Uttar Pradesh", code: "UPR"}, {id: 30, state: "Uttarakhand", code: "UKH"}, {id: 31, state: "West Bengal", code: "WBL"}],
       dates: Array(34).fill(""),
       currentMonth: new Date().getMonth(),
       currentYear: new Date().getYear() + 1900,
-      holidayTiles: Array(34).fill("")
+      holidayTiles: Array(34).fill(""),
+      stateCode: "",
     };
   }
 
@@ -65,7 +67,8 @@ export class Board extends React.Component {
   fetchData(year, month) {
     let currentMonth = month+1;
     let currentYear = year;
-    let a = axios.get("http://localhost:3000/holidays?month="+currentMonth+"&year="+currentYear)
+    console.log(this.state.stateCode)
+    let a = axios.get("http://localhost:3000/holidays?month="+currentMonth+"&year="+currentYear+"&state="+this.state.stateCode)
     .then(response => {return response.data})
     .then(result => {
           let colour = Array(34).fill("");
@@ -134,21 +137,27 @@ export class Board extends React.Component {
 
   renderDropDown() {
     return(
-      <select>
+      <div className="drop">
+      <select className="select" onChange={this.selectState}>
+        <option default>Select State</option>
         {this.state.states.map((data) => {
-          return(<option key={data.id} value={data.state} onChange={this.selectState(data.state)}>{data.state}</option>)
+          return(<option key={data.id} value={data.code}>{data.state}</option>)
         })}
       </select>
+    </div>
     );
   }
 
-  selectState(e) {
-    //console.log(e);
+  selectState(event) {
+    this.setState({stateCode: event.target.value}, () => {
+      this.fetchData(this.state.currentYear, this.state.currentMonth)
+    });
+
   }
 
   render() {
     return(
-      <div>
+      <div className="parent">
         <div>{this.renderTop()}</div>
         <div id="board" className="grid">
           {this.renderDay("Mon")}
@@ -193,8 +202,8 @@ export class Board extends React.Component {
           {this.renderDate(32)}
           {this.renderDate(33)}
           {this.renderDate(34)}
+          {this.renderDropDown()}
         </div>
-        <div>{this.renderDropDown()}</div>
       </div>
     );
   }
