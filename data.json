@@ -1,0 +1,28 @@
+{
+    "holidays":[
+        {"id":"1", "month":1, "day":26, "year":2018, "holiday":"Republic Day", "state":"MAH"},
+        {"id":"2", "month":2, "day":13, "year":2018, "holiday":"Maha Shivratri", "state":"MAH"},
+        {"id":"3", "month":2, "day":19, "year":2018, "holiday":"Chhatrapati Shivaji Maharaj Jayanti", "state":"MAH"},
+        {"id":"4", "month":3, "day":2, "year":2018, "holiday":"Holi", "state":"MAH"},
+        {"id":"5", "month":3, "day":29, "year":2018, "holiday":"Mahavir Jayanti", "state":"MAH"},
+        {"id":"6", "month":3, "day":30, "year":2018, "holiday":"Good Friday", "state":"MAH"},
+        {"id":"7", "month":4, "day":1, "year":2018, "holiday":"Bank Holiday", "state":"MAH"},
+        {"id":"8", "month":4, "day":14, "year":2018, "holiday":"Dr. Ambedkar Jayanti", "state":"MAH"},
+        {"id":"9", "month":4, "day":30, "year":2018, "holiday":"Buddha Pournima", "state":"MAH"},
+        {"id":"10", "month":5, "day":1, "year":2018, "holiday":"Maharashtra Day", "state":"MAH"},
+        {"id":"11", "month":6, "day":16, "year":2018, "holiday":"Id-ul-Fitr", "state":"MAH"},
+        {"id":"12", "month":7, "day":15, "year":2018, "holiday":"Independence Day", "state":"MAH"},
+        {"id":"13", "month":8, "day":17, "year":2018, "holiday":"Parsi New Year", "state":"MAH"},
+        {"id":"14", "month":8, "day":22, "year":2018, "holiday":"Id-ul-Juha", "state":"MAH"},
+        {"id":"15", "month":9, "day":13, "year":2018, "holiday":"Ganesh Chaturthi", "state":"MAH"},
+        {"id":"16", "month":9, "day":20, "year":2018, "holiday":"Muharram", "state":"MAH"},
+        {"id":"17", "month":10, "day":2, "year":2018, "holiday":"Mahatma Gandhi Jyanti", "state":"MAH"},
+        {"id":"18", "month":10, "day":18, "year":2018, "holiday":"Dusshera", "state":"MAH"},
+        {"id":"19", "month":11, "day":7, "year":2018, "holiday":"Deepavali (Laxmi Pujan)", "state":"MAH"},
+        {"id":"20", "month":11, "day":8, "year":2018, "holiday":"Depavali Padva", "state":"MAH"},
+        {"id":"21", "month":11, "day":21, "year":2018, "holiday":"Id-e-Milad", "state":"MAH"},
+        {"id":"22", "month":11, "day":23, "year":2018, "holiday":"Guru Nanak Jayanti", "state":"MAH"},
+        {"id":"23", "month":12, "day":25, "year":2018, "holiday":"Christmas Day", "state":"MAH"},
+        {"id":"24", "month":12, "day":25, "year":2018, "holiday":"Christmas Day", "state":"DEL"}
+    ]
+}
