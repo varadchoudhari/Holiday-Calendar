@@ -3,6 +3,7 @@ import './calendar.css'
 import axios from 'axios'
 
 class Day extends React.Component {
+
   render() {
     let dates = this.props.dates;
     let bgColor = this.props.bgColor;
@@ -30,16 +31,26 @@ export class Board extends React.Component {
   }
 
   getMonthDates(year, month) {
+    let holidayColor = "#F7F7F7"
+    let holidays = Array(34).fill("");
     let numberOfDays = new Date(year, month+1,0).getDate();
     let startDay = new Date(year, month, 1).getDay();
     let dates = Array(34).fill("")
     if (startDay === 0) {
       for(let i = startDay+6; i < numberOfDays+startDay+6; i++) {
         let date = i-5;
+        let dayOfWeek = new Date(year, month, date).getDay();
+        if (dayOfWeek === 0 || dayOfWeek === 6) {
+          holidays[i] = holidayColor;
+        }
         dates[i] = date.toString();
       }
       if ((numberOfDays+startDay+5 - 34) === 1) {
         dates[0] = 30;
+        let dayOfWeek = new Date(year, month, 30).getDay();
+        if ( dayOfWeek === 0 || dayOfWeek === 6) {
+          holidays[0] = holidayColor;
+        }
       }
       if ((numberOfDays+startDay+5 - 34) === 2) {
         dates[0] = 30;
@@ -50,10 +61,15 @@ export class Board extends React.Component {
     else {
       for(let i = startDay - 1; i < numberOfDays+startDay-1; i++) {
         let date = i - (startDay - 2);
+        let dayOfWeek = new Date(year, month, date).getDay();
+        if ( dayOfWeek === 0 || dayOfWeek === 6) {
+          holidays[i] = holidayColor;
+        }
         dates[i] = date.toString();
       }
     }
-    this.setState({dates: dates});
+
+    this.setState({dates: dates, holidayTiles: holidays});
   }
 
   componentWillMount() {
@@ -65,18 +81,33 @@ export class Board extends React.Component {
   }
 
   fetchData(year, month) {
+    let holidayColor = "pink"
     let currentMonth = month+1;
     let currentYear = year;
-    console.log(this.state.stateCode)
     let a = axios.get("http://localhost:3000/holidays?month="+currentMonth+"&year="+currentYear+"&state="+this.state.stateCode)
     .then(response => {return response.data})
     .then(result => {
-          let colour = Array(34).fill("");
-          for(let i = 0; i < result.length; i++) {
-            let dates = this.state.dates;
-            colour[this.state.dates.indexOf(""+result[i].day)] = "#a0e7ff";
-          }
-          this.setState({holidayTiles:colour})
+      let colour = this.state.holidayTiles.slice();
+      //Sunday = 0, Monday = 1, Tueday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6
+      for(let i = 0; i < result.length; i++) {
+        let dates = this.state.dates;
+        colour[this.state.dates.indexOf(""+result[i].day)] = "#a0e7ff";
+        let day = new Date(result[i].year, result[i].month-1, result[i].day).getDay()
+        if (day === 1) {
+          colour[this.state.dates.indexOf(""+result[i].day) - 3] = holidayColor
+        }
+        else if (day === 2) {
+          colour[this.state.dates.indexOf(""+result[i].day) - 1] = holidayColor
+        }
+        else if (day === 4) {
+          colour[this.state.dates.indexOf(""+result[i].day) + 1] = holidayColor
+        }
+        else if (day === 5) {
+          colour[this.state.dates.indexOf(""+result[i].day) + 3] = holidayColor
+        }
+
+      }
+      this.setState({holidayTiles:colour})
     });
   }
 
@@ -138,13 +169,13 @@ export class Board extends React.Component {
   renderDropDown() {
     return(
       <div className="drop">
-      <select className="select" onChange={this.selectState}>
-        <option default>Select State</option>
-        {this.state.states.map((data) => {
-          return(<option key={data.id} value={data.code}>{data.state}</option>)
-        })}
-      </select>
-    </div>
+        <select className="select" onChange={this.selectState}>
+          <option default>Select State</option>
+          {this.state.states.map((data) => {
+            return(<option key={data.id} value={data.code}>{data.state}</option>)
+          })}
+        </select>
+      </div>
     );
   }
 

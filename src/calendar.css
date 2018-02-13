@@ -3,9 +3,6 @@
     font-family: Roboto;
 }
 
-.parent {
-  
-}
 
 .date {
   width: 75px;
@@ -76,8 +73,9 @@
 .drop {
   background-color: #00BFFF;
   width: 675px;
-  display: grid;
+  display: inline-grid;
   height: 75px;
+
 }
 
 .drop select {
@@ -92,7 +90,6 @@
   height: 30px;
   margin-left: 212.5px;
   margin-top: 22.5px;
-
 }
 
 #board {
