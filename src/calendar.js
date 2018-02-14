@@ -234,6 +234,15 @@ export class Board extends React.Component {
           {this.renderDate(33)}
           {this.renderDate(34)}
           {this.renderDropDown()}
+          <div className="legend">
+            <div className="icon"></div>
+            <div id="weekend" className="icon"></div>
+            <div className="content">Saturday / Sunday</div>
+            <div id="holiday" className="icon"></div>
+            <div className="content">Public Holiday</div>
+            <div id="leave"className="icon"></div>
+            <div className="content">Take a leave</div>
+          </div>
         </div>
       </div>
     );

@@ -78,6 +78,39 @@
 
 }
 
+.legend {
+  width: 675px;
+  height: 75px;
+  display: flex;
+}
+
+.icon {
+  overflow: auto;
+  width: 50px;
+  height: 50px;
+  line-height: 75px;
+  margin-top: 15px;
+}
+
+#weekend {
+  background-color: #F7F7F7;
+}
+
+#holiday {
+  background-color: #a0e7ff;
+}
+
+#leave {
+  background-color: pink;
+}
+
+.content {
+  height: 50px;
+  width: 150px;
+  margin-left: 20px;
+  line-height: 75px;
+}
+
 .drop select {
   background: white;
   border: 2px solid white;
