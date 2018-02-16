@@ -32,15 +32,15 @@
         {"id":"30", "month":4, "day":30, "year":2018, "holiday":"Buddha Purnima", "state":"DEL"},
         {"id":"31", "month":6, "day":16, "year":2018, "holiday":"Id-ul-Fitr", "state":"DEL"},
         {"id":"32", "month":8, "day":15, "year":2018, "holiday":"Independence Day","state":"DEL"},
-        {"id":"33", "date":8, "day":22, "year":2018, "holiday":"Id-ul-Juha", "state":"DEL"},
-        {"id":"34", "date":"03-09-2018", "day":"Monday", "holiday":"Janmashtami", "state":"DEL"},
-        {"id":"35", "date":"21-09-2018", "day":"Friday", "holiday":"Muharram", "state":"DEL"},
-        {"id":"36", "date":"02-10-2018", "day":"Tuesday", "holiday":"Mahatma Gandhi Jayanti", "state":"DEL"},
-        {"id":"37", "date":"19-10-2018", "day":"Friday", "holiday":"Dusshera", "state":"DEL"},
-        {"id":"38", "date":"24-10-2018", "day":"Wednesday", "holiday":"Maharshi Valmiki Jayanti", "state":"DEL"},
-        {"id":"39", "date":"07-11-2018", "day":"Wednesday", "holiday":"Diwali", "state":"DEL"},
-        {"id":"40", "date":"21-11-2018", "day":"Wednesday", "holiday":"Id-e-Milad", "state":"DEL"},
-        {"id":"41", "date":"23-11-2018", "day":"Friday", "holiday":"Guru Nanak Jayanti", "state":"DEL"},
-        {"id":"19", "date":"25-12-2018", "day":"Tuesday", "holiday":"Christmas Day", "state":"DEL"}
+        {"id":"33", "month":8, "day":22, "year":2018, "holiday":"Id-ul-Juha", "state":"DEL"},
+        {"id":"34", "month":9, "day":3, "year":2018, "holiday":"Janmashtami", "state":"DEL"},
+        {"id":"35", "month":9, "day":21, "year":2018, "holiday":"Muharram", "state":"DEL"},
+        {"id":"36", "month":10, "day":2, "year":2018, "holiday":"Mahatma Gandhi Jayanti", "state":"DEL"},
+        {"id":"37", "month":10, "day":19, "year":2018, "holiday":"Dusshera", "state":"DEL"},
+        {"id":"38", "month":10, "day":24, "year":2018, "holiday":"Maharshi Valmiki Jayanti", "state":"DEL"},
+        {"id":"39", "month":11, "day":7, "year":2018, "holiday":"Diwali", "state":"DEL"},
+        {"id":"40", "month":11, "day":21, "year":2018, "holiday":"Id-e-Milad", "state":"DEL"},
+        {"id":"41", "month":11, "day":23, "year":2018, "holiday":"Guru Nanak Jayanti", "state":"DEL"},
+        {"id":"19", "month":12, "day":25, "year":2018, "holiday":"Christmas Day", "state":"DEL"}
     ]
 }
