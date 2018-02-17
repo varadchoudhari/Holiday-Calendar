@@ -41,6 +41,12 @@
         {"id":"39", "month":11, "day":7, "year":2018, "holiday":"Diwali", "state":"DEL"},
         {"id":"40", "month":11, "day":21, "year":2018, "holiday":"Id-e-Milad", "state":"DEL"},
         {"id":"41", "month":11, "day":23, "year":2018, "holiday":"Guru Nanak Jayanti", "state":"DEL"},
-        {"id":"19", "month":12, "day":25, "year":2018, "holiday":"Christmas Day", "state":"DEL"}
+        {"id":"42", "month":12, "day":25, "year":2018, "holiday":"Christmas Day", "state":"DEL"},
+        {"id":"43", "month":1, "day":14, "year":2018, "holiday":"Bhogi", "state":"ANP"},
+        {"id":"44", "month":1, "day":15, "year":2018, "holiday":"Sankranti", "state":"ANP"},
+        {"id":"45", "month":1, "day":26, "year":2018, "holiday":"Republic Day", "state":"ANP"},
+        {"id":"46", "month":2, "day":13, "year":2018, "holiday":"Maha Shivratri", "state":"ANP"},
+        {"id":"47", "month":3, "day":2, "year":2018, "holiday":"Holi", "state":"ANP"},
+        {"id":"48", "month":3, "day":18, "year":2018, "holiday":"Ugadi", "state":"ANP"},
     ]
 }
